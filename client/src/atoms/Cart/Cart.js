@@ -1,6 +1,3 @@
-
-
-
 import { Avatar } from 'antd';
 import { ShoppingCartOutlined } from '@ant-design/icons';
 
@@ -8,7 +5,7 @@ const CartFunction = ()=>{
 return (
     
     <div>
-      <Avatar size={64} icon={<ShoppingCartOutlined />} />
+      <Avatar style={{backgroundColor:"black"}} size={64} icon={<ShoppingCartOutlined />} />
     </div>
 )
 }
