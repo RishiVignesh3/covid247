@@ -1,0 +1,35 @@
+.header {
+  display: grid;
+  justify-content: center;
+  background-color: #739e97;
+
+
+  .header__Content {
+    width: 75rem;
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+
+  .left {
+    display: grid;
+    align-items: center;
+    justify-content: end;
+    grid-template-columns: repeat(3, 7rem) repeat(2, 4rem);
+    gap: 1rem;
+
+    a {
+      text-decoration: none;
+      color: #0e1559;
+      font-weight: 900;
+      font-family: "Rubik";
+      font-size: larger;
+    }
+  }
+  .outer {
+    height: 7rem;
+    background-image: url(./Covid247.PNG);
+    background-repeat: no-repeat;
+    display: grid;
+    align-items: center;
+  }
+}

@@ -1,0 +1,37 @@
+.DashBoard{
+    *{
+        text-align: center;
+    }
+    h1{
+        font-size: 70px;
+        font-family: 'Brush Script MT', cursive;
+        text-align: center;
+    }
+}
+.mainImage{
+    display: grid;
+    grid-template-rows: auto;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1.5rem ;
+}
+
+
+.outer{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+ }
+ 
+ .Nav{
+     
+     width:10rem;
+     height:7rem;
+     background-color: #345C7B;
+     border-radius: 1.5rem;
+     text-align: center;
+ }
+ .DashBoard__CRG{
+     display: grid;
+     gap: 1rem;
+ }

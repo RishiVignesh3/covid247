@@ -1,0 +1,48 @@
+.parent {
+   height: 8rem;
+  display: grid;
+  background-color: #eef0ff;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.parent__content {
+  width: 75rem;
+  height: 9rem;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  align-items: center;
+  .parent__content__inner{
+     display: grid;
+     justify-content: center;
+     row-gap: 1rem;
+     align-items: center;
+     img{
+        border-radius: 10px;
+     }
+  }
+}
+
+.Total {
+  color: #a60b43;
+  font-weight: 800;
+  font-size: larger;
+}
+
+.Active {
+  font-weight: 800;
+  font-size: larger;
+  color: #0a05f3;
+}
+
+.Recovered {
+  font-weight: 800;
+  font-size: larger;
+  color: #037d1e;
+}
+
+.Deceased {
+  color: #ff0000;
+  font-weight: 800;
+  font-size: larger;
+}
