@@ -1,0 +1,18 @@
+.login_card {
+	display: grid;
+	grid-template-columns: auto 20rem;
+	border-radius: 10;
+	margin-top: 1.5rem;
+	margin-right: 11rem;
+}
+.loginDetails_cardLeft {
+	display: grid;
+	justify-content: end;
+}
+.loginDetails_cardRight {
+	display: grid;
+	background-color: #FEBA33;
+	justify-content: center;
+	align-items: center;
+	border-radius: 0 1.25rem 1.25rem 0;
+}

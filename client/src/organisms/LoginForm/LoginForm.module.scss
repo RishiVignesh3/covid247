@@ -1,0 +1,37 @@
+.login-form {
+	display: grid;
+	background-color: #FEBA33;
+	justify-content: center;
+	align-items: center;
+	border-radius: 0 1.25rem 1.25rem 0;
+	gap: 2rem;
+	input {
+		width: 15.625rem;
+		height:2rem;
+		&::placeholder {
+			padding: 1.25rem;
+		}
+	}
+}
+.login-form-button__Signup{
+ width: 100px;
+ margin: 0 auto;
+}
+
+.login-form-button__Login{
+	display: grid;
+	justify-content: end;
+}
+
+
+.login-form-button {
+	background-color: #1A535C;
+	color: white;
+	border-radius: 1.25rem;
+	border: none;
+
+}
+a {
+	
+	font-style: italic;
+}
