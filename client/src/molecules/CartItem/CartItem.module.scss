@@ -1,0 +1,40 @@
+.m-cart-item{
+    display:grid;
+grid-template-columns: auto auto auto auto;
+justify-content: space-between;
+  margin-top: 3rem;
+    
+img{
+        width: 8.5rem;
+        height:7rem;
+        border-radius: 0.5rem 0rem 0rem 0.5rem;
+        object-fit: cover;
+        object-position: top;
+     }
+         &__action{  
+        display: flex;
+        margin-top: 2rem;
+        flex-wrap:wrap;
+        width: 15rem;
+        justify-content: space-around;
+ 
+}
+&__product {
+    display: flex;
+}
+&__price {
+    margin-top: 2rem;
+   width: 6rem;
+    font-weight: bold;
+}
+
+&__title{
+    margin-top: 2rem;
+ margin-left: 2rem;
+    width: 14rem;
+    font-size: 1rem;
+    font-weight: bold;
+  
+}
+
+}
