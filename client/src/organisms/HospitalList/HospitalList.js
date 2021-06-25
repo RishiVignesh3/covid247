@@ -11,7 +11,7 @@ const HospitalList = () => {
  }
 
 
-    const hospitals= db.hospitalData.map(hospital=><Cards onClick={CardClickHandler} id={`hospital${hospital.id}`} className="hospitals" name={hospital.name} value={hospital.rating} key={hospital.id}/>)
+    const hospitals= db.hospitalData.map(hospital=><Cards alignRating={true} onClick={CardClickHandler} id={`hospital${hospital.id}`} className="hospitals" name={hospital.name} value={hospital.rating} key={hospital.id}/>)
 
     return (
         <div className={style["hospitalsDiv"]}>
