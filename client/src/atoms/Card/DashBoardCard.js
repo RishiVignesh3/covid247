@@ -17,7 +17,7 @@ const CardDashboard = (props) => {
       >
         <p>{content.content}</p>
         <p>{content.content2}</p>
-        <Link to={content.content=="Ran out of medications ?" ? "/pharmacy" : "/consult"}><Buttons
+        <Link to={content.content==="Ran out of medications ?" ? "/pharmacy" : "/consult"}><Buttons
           bgcolor={"#1A535C"}
           width={150}
           height={50}

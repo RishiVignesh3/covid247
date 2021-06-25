@@ -17,12 +17,12 @@ const CaseRecord = () => {
       <div className={Style["parent__content"]}>
         {records.map((items) => (
           <div key={items.name} >
-            <div className={Style["parent__content__inner"]}>{items.name == "Total" || items.name == "Recovered" ? (
-              <img src={TotImage} />
-            ) : items.name == "Active" ? (
-              <img src={InactiveImage} />
+            <div className={Style["parent__content__inner"]}>{items.name === "Total" || items.name === "Recovered" ? (
+              <img alt="TotImage" src={TotImage} />
+            ) : items.name === "Active" ? (
+              <img alt="InactiveImage" src={InactiveImage} />
             ) : (
-              <img src={DeathImage} />
+              <img alt="DeathImage" src={DeathImage} />
             )}</div>
             <p className={Style[items.name]}>
               {items.name} : {items.cases}
