@@ -1,13 +1,6 @@
 import React, { useState } from "react";
-import {
-  Form,
-  Input,
-  Select,
-  Checkbox,
-  Button
-} from "antd";
+import { Form, Input, Select, Checkbox, Button } from "antd";
 import Style from "./SignUpForm.module.scss";
-
 
 const formItemLayout = {
   labelCol: {
@@ -42,15 +35,11 @@ const tailFormItemLayout = {
 
 const RegistrationForm = () => {
   const [form] = Form.useForm();
-    
+
   const onFinish = (values) => {
     console.log("Received values of form: ", values);
   };
 
- 
- 
-
-  
   return (
     <Form
       className={Style["SignUpForm"]}
@@ -75,7 +64,7 @@ const RegistrationForm = () => {
           },
         ]}
       >
-        <Input className={Style["SignUpInput"]} placeholder="Email Address" />
+        <Input className={Style["SignUpInput"]} placeholder="Username" />
       </Form.Item>
 
       <Form.Item
@@ -91,7 +80,7 @@ const RegistrationForm = () => {
           },
         ]}
       >
-        <Input className={Style["SignUpInput"]} placeholder="Username" />
+        <Input className={Style["SignUpInput"]} placeholder="Email Address" />
       </Form.Item>
 
       <Form.Item
@@ -105,7 +94,7 @@ const RegistrationForm = () => {
         hasFeedback
       >
         <Input.Password
-        className={Style["SignUpInput"]}
+          className={Style["SignUpInput"]}
           placeholder="Password"
         />
       </Form.Item>
@@ -138,7 +127,6 @@ const RegistrationForm = () => {
         />
       </Form.Item>
 
-      
       <Form.Item {...tailFormItemLayout}>
         <Button
           className={Style["SignUpForm__Button"]}

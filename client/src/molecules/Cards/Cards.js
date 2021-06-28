@@ -26,7 +26,7 @@ const Cards = (props) => {
           description={props.price?`price : ${props.price}$`:''}
           data-test="meta_info"
         />
-        <Rating value={props.value} />
+        <div className={props.alignRating?style['m-cards__rating']:''}><Rating value={props.value} /></div>
         {props.BtnNeed?(<Buttons
           id="btn"
           btnType="success"

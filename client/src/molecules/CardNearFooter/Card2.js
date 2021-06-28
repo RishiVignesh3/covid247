@@ -1,4 +1,4 @@
-import Buttons from "../../atoms/Buttons/Buttons";
+// import Buttons from "../../atoms/Buttons/Buttons";
 import CardDashboard from "../../atoms/Card/DashBoardCard";
 
 import Style from "./Card2.module.scss";

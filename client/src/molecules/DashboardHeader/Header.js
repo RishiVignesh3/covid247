@@ -1,7 +1,7 @@
 import Cart from "../../atoms/Cart/Cart";
 import {Link} from "react-router-dom"
 import Avatar from "../../atoms/Avatar/Avatar";
-import {Route} from "react-router-dom"
+// import {Route} from "react-router-dom"
 
 import Style from "./Header.module.scss";
 

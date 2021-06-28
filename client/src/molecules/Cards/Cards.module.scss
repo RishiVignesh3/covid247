@@ -1,4 +1,8 @@
 .m-cards{
     margin: 1rem 0;
     width: 13rem;
+    &__rating{
+        display: grid;
+        justify-items: center;
+    }
 }

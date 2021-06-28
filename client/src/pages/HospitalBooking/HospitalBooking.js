@@ -29,7 +29,7 @@ const HospitalBooking = () => {
                 <div> <img src="https://source.unsplash.com/random/250x200" alt="Poster" /> </div>
             </div>
             <div className={style['Hospital-Booking__Availability']}>
-                <p>O2 Availability <img src={TickIcon} width={25} height={20}/></p>
+                <p>O2 Availability <img alt='greenTick' src={TickIcon} width={25} height={20}/></p>
                 <p>Beds Available - 28</p>
             </div>
             <div className={style['Hospital-Booking__modalBtn']}><ModalDiv /></div>

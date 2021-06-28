@@ -2,8 +2,7 @@ import { Form, Input, Button, Checkbox } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import SocialIcons from "../../molecules/Social-Icons/SocialIcons";
 import Style from "./LoginForm.module.scss";
-import {Link} from "react-router-dom"
-
+import { Link } from "react-router-dom";
 
 const NormalLoginForm = () => {
   const onFinish = (values) => {
@@ -28,7 +27,8 @@ const NormalLoginForm = () => {
           },
         ]}
       >
-        <Input style={{borderRadius:"1rem"}}
+        <Input
+          style={{ borderRadius: "1rem" }}
           prefix={<UserOutlined className={Style["site-form-item-icon"]} />}
           placeholder="Username"
         />
@@ -42,7 +42,8 @@ const NormalLoginForm = () => {
           },
         ]}
       >
-        <Input style={{borderRadius:"1rem"}}
+        <Input
+          style={{ borderRadius: "1rem" }}
           prefix={<LockOutlined className={Style["site-form-item-icon"]} />}
           type="password"
           placeholder="Password"
@@ -63,14 +64,17 @@ const NormalLoginForm = () => {
         <SocialIcons />
       </Form.Item>
       <Form.Item className={Style["login-form-button__Signup"]}>
-       <Link to="/SignUp"> <Button
-          type="primary"
-          htmlType="submit"
-          style={{ width: "6.25rem", height: "3rem", fontSize: "1.25rem" }}
-          className={Style["login-form-button"]}
-        >
-          Sign Up
-        </Button></Link>
+        <Link to="/SignUp">
+          {" "}
+          <Button
+            type="primary"
+            htmlType="submit"
+            style={{ width: "6.25rem", height: "3rem", fontSize: "1.25rem" }}
+            className={Style["login-form-button"]}
+          >
+            Sign Up
+          </Button>
+        </Link>
       </Form.Item>
     </Form>
   );

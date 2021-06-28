@@ -13,7 +13,7 @@ const CarouselFunction = () => {
     <div className={Style["DashBoard__Carousel_Main"]}>
     <Carousel dots={true} autoplay={true}>
     {Arr.map((item)=>(
-      <img
+      <img alt='carouselImg'
       className={Style["DashBoard__Carousel"]}
       src={item} height="350px"
     />
