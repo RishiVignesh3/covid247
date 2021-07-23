@@ -1,14 +1,47 @@
 .parent {
-   height: 8rem;
+   height: 5rem;
   display: grid;
   background-color: #eef0ff;
   justify-content: space-around;
   text-align: center;
+  
+.Total {
+  color: #a60b43;
+  font-weight: 800;
+  font-size: medium;
+  text-shadow: 2px 7px 5px rgba(0,0,0,0.3), 
+    0px -4px 10px rgba(255,255,255,0.3);
 }
+
+.Active {
+  font-weight: 800;
+  font-size: medium;
+  color: #0a05f3;
+  text-shadow: 2px 7px 5px rgba(0,0,0,0.3), 
+    0px -4px 10px rgba(255,255,255,0.3);
+}
+
+.Recovered {
+  font-weight: 800;
+  font-size: medium;
+  color: #037d1e;
+  text-shadow: 2px 7px 5px rgba(0,0,0,0.3), 
+    0px -4px 10px rgba(255,255,255,0.3);
+}
+
+.Deceased {
+  color: #ff0000;
+  font-weight: 800;
+  font-size: medium;
+  text-shadow: 2px 7px 5px rgba(0,0,0,0.3), 
+    0px -4px 10px rgba(255,255,255,0.3);
+}
+
+
 
 .parent__content {
   width: 75rem;
-  height: 9rem;
+  height: 6rem;
   display: grid;
   grid-template-columns: repeat(4, auto);
   align-items: center;
@@ -19,30 +52,8 @@
      align-items: center;
      img{
         border-radius: 10px;
+        height: 2.5rem;
      }
   }
 }
-
-.Total {
-  color: #a60b43;
-  font-weight: 800;
-  font-size: larger;
-}
-
-.Active {
-  font-weight: 800;
-  font-size: larger;
-  color: #0a05f3;
-}
-
-.Recovered {
-  font-weight: 800;
-  font-size: larger;
-  color: #037d1e;
-}
-
-.Deceased {
-  color: #ff0000;
-  font-weight: 800;
-  font-size: larger;
 }

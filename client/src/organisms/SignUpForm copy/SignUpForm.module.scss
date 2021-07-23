@@ -1,0 +1,36 @@
+.SignUpInput {
+	border-radius: 0.625rem;
+	height: 2.188rem;
+	width: 15.625rem;
+	border: none;
+	input {
+		border-radius: 0.625rem;
+		width: 15.625rem;
+		border: none;
+		border-radius: 0.625rem;
+		width: 14.688rem;
+		border: none;
+		&::placeholder {
+			padding: 1.25rem;
+		}
+	}
+	&::placeholder {
+		padding: 1.25rem;
+	}
+}
+.SignUpForm__Button {
+	width: 6.25rem;
+	height: 2.5rem;
+	background-color: #422057;
+	color: white;
+	border-radius: 0.625rem;
+	font-size: 1.25rem;
+	border: none;
+}
+.SignUpForm {
+	display: grid;
+	justify-content: center;
+	align-items: center;
+	border-radius: 0 1.25rem 1.25rem 0;
+	gap: 0.8rem;
+}

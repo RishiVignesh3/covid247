@@ -17,7 +17,7 @@ const Card = () => {
     <div>
       <div className={Style["cardAlign"]}>
         {cardContent.map((items, index) => (
-          <CardDashboard keyIndex={index} content={items} >
+          <CardDashboard key={Math.random()} keyIndex={index} content={items} >
           </CardDashboard>
         ))}
       </div>

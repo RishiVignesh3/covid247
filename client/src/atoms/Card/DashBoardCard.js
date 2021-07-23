@@ -7,7 +7,6 @@ import {Link} from "react-router-dom"
 
 const CardDashboard = (props) => {
   const { content, keyIndex } = props;
-  console.log(props.content);
   return (
     <div className={Style["site-card-border-less-wrapper"]}>
       <Card
@@ -23,11 +22,11 @@ const CardDashboard = (props) => {
           height={50}
           borderradius={20}
           name={"Click Here"}
-          color={"#ECD3A2"}
+          color={"black"}
           Weight={700}
-          Size={"1rem"}
+          Size={"1.5rem"}
           Border={"none"}
-          btnType={"success"}
+          btnType={"yellow"}
         /></Link>
       </Card>
     </div>

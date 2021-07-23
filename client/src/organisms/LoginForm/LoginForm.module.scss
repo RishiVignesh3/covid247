@@ -1,10 +1,12 @@
+
+
 .login-form {
 	display: grid;
 	background-color: #FEBA33;
 	justify-content: center;
 	align-items: center;
 	border-radius: 0 1.25rem 1.25rem 0;
-	gap: 2rem;
+	gap: 1rem;
 	input {
 		width: 15.625rem;
 		height:2rem;
@@ -12,15 +14,31 @@
 			padding: 1.25rem;
 		}
 	}
+	.error{
+		text-align: center;
+		color: red;
+		font-size: 1rem;
+		font-weight: 700;
+	}
 }
 .login-form-button__Signup{
- width: 100px;
+ width: 150px;
  margin: 0 auto;
 }
+.login-form-button__Forgot{
+	width: 190px;
+	margin: 0 auto;
+   }
 
 .login-form-button__Login{
 	display: grid;
-	justify-content: end;
+	justify-content: center;
+	p{
+		padding-left: 20px;
+		font-style: italic;
+		color: blue;
+		cursor: pointer;
+	}
 }
 
 
@@ -31,7 +49,4 @@
 	border: none;
 
 }
-a {
-	
-	font-style: italic;
-}
+

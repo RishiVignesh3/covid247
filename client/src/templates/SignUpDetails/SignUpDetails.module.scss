@@ -1,24 +1,23 @@
 .SignUp__Card {
-	display: grid;
-	grid-template-columns: auto 20rem;
-	border-radius: 10;
-	margin-top: 1.5rem;
-	margin-right: 11rem;
+  display: grid;
+  grid-template-columns: auto 20rem;
+  border-radius: 10;
+  width: 75rem;
+  margin: 0 auto;
+  justify-content: center;
 }
 .SignUpDetails_cardLeft {
-	display: grid;
-	justify-content: end;
-	gap: 1rem;
+  display: grid;
+  justify-content: center;
+  gap: 1rem;
 }
 .SignUpDetails_cardRight {
-	display: grid;
-	background-color: #FEBA33;
-	justify-content: center;
-	align-items: center;
-	border-radius: 0 1.25rem 1.25rem 0;
-	gap: 0rem;
-	height: 31.25rem;
-	h1{
-		height: 0rem;
-	}
+  display: grid;
+  background-color: #feba33;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 1.25rem 1.25rem 0;
+  gap: 0rem;
+  height: 31.25rem;
+
 }

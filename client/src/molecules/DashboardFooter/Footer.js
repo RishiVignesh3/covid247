@@ -14,8 +14,9 @@ const Footer = () => {
           <p>About Us</p>
           <p>
             Content Owned and Maintained by : Cognizant Technology Solutions Pvt
-            Limited India
+            Limited 
           </p>
+          <p>India</p>
         </div>
 
         <hr className={Style["seperator"]} />
@@ -24,8 +25,9 @@ const Footer = () => {
           <p>Contact Us</p>
           <p>
             Plot No B 40 41, Old Mahabalipuram Road, Sirucheri, Chennai -
-            603103, Sipcot IT Park
+            603103, 
           </p>
+          <p>Sipcot IT Park</p>
         </div>
       </div>
       </div>

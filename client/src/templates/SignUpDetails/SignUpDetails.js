@@ -6,7 +6,7 @@ const SignUpDetails = () => {
   return (
     <div className={Style["SignUp__Card"]}>
       <div className={Style["SignUpDetails_cardLeft"]}>
-        <img style={{ borderRadius: "1.25rem 0 0 1.25rem", height:"31.25rem" }} src={Image}></img>
+        <img style={{ borderRadius: "1.25rem 0 0 1.25rem", height:"31.25rem" }} src={Image} alt="signup"></img>
       </div>
       <div className={Style["SignUpDetails_cardRight"]}>
           <h1>Get Started !!!</h1>

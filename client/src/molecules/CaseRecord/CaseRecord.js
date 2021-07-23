@@ -22,7 +22,7 @@ const CaseRecord = () => {
             ) : items.name === "Active" ? (
               <img alt="InactiveImage" src={InactiveImage} />
             ) : (
-              <img alt="DeathImage" src={DeathImage} />
+              <img alt="DeathImage"  src={DeathImage} />
             )}</div>
             <p className={Style[items.name]}>
               {items.name} : {items.cases}
