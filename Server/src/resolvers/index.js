@@ -8,9 +8,8 @@ const Query = require("./resolvers/query");
 const Mutation = require("./resolvers/mutation");
 const Hospital = require("./resolvers/Hospital");
 const Patient = require("./resolvers/Patient");
-const Patient1 = require("./resolvers/Patient1");
 const Appointment = require("./resolvers/Appointment");
-
+const Patient1 = require("./resolvers/Patient1");
 const cors =  require("cors");
 
 
@@ -36,7 +35,6 @@ app.use('/', graphqlHTTP({
     schema: schemaWithResolvers,
     graphiql: true,
 }));
-
 
 
 app.listen(4000,()=>{
