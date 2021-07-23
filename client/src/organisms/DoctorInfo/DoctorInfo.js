@@ -1,72 +1,31 @@
 import Cards from "../../molecules/DoctorCards/Cards";
-// import ModalPage from "../../molecules/ModalPage/ModalPage";
 import Style from "./DoctorInfo.module.scss";
+import { gql, useQuery } from "@apollo/client";
 
-export const dummy_docinfo = [
+const Docinfo = gql`
   {
-    name: "Kani",
-    speciality: "Covid consult",
-    price: 350,
-    rating: 4,
-  },
-  {
-    name: "Vino",
-    speciality: "Covid consult",
-    price: 350,
-    rating: 4,
-  },
-  {
-    name: "Haritha",
-    speciality: "Covid consult",
-    price: 180,
-    rating: 3,
-  },
-  {
-    name: "Yasmin",
-    speciality: "Covid consult",
-    price: 350,
-    rating: 4.5,
-  },
-  {
-    name: "Kowsalya",
-    speciality: "Covid consult",
-    price: 350,
-    rating: 4,
-  },
-  {
-    name: "Darshini",
-    speciality: "Covid consult",
-    price: 350,
-    rating: 4.5,
-  },
-  {
-    name: "Dilan",
-    speciality: "Covid consult",
-    price: 650,
-    rating: 4.5,
-  },
-  {
-    name: "Rishi",
-    speciality: "Covid consult",
-    price: 550,
-    rating: 4.5,
-  },
-];
-
+    doctorProfile {
+      id
+      name
+      description
+      price
+      rating
+    }
+  }
+`;
 const DoctorDetails = () => {
-  const doctorList = dummy_docinfo.map((doctor) => (
-    <div>
+  const { loading, error, data } = useQuery(Docinfo);
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error </p>;
+  const doctorList = data.doctorProfile.map((doctor) => (
     <Cards
+      id={doctor.id}
       name={doctor.name}
-      speciality={doctor.speciality}
+      speciality={doctor.description}
       price={doctor.price}
       value={doctor.rating}
-      modal = {true} 
-    >
-     
-    </Cards>
-    {/* <ModalPage /> */}
-    </div>
+      modal={true}
+    />
   ));
   return (
     <div>
