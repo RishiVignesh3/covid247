@@ -1,15 +1,23 @@
 import CartItems from "../../molecules/CartItem/CartItems";
 import style from "./CartStore.module.scss"
-import {dummy_medicine} from '../medicineStore/medicineStore';
+import  { connect } from 'react-redux'
 
-const CartStore = () => {
-    const CartList = dummy_medicine.map(med => <CartItems name={med.name} price={med.price} Qty={med.Qty} ></CartItems>);
+const CartStore = (props) => {
  
+    const {cartItems} = props
+    const CartList = cartItems.map(item=> <CartItems key={item.id} id={item.id} name={item.Name} price={item.price} qty={item.qty}></CartItems>);
+    
     return <section>
         <div className={style["cart"]}>
-            {CartList}
+            {cartItems.length===0 ? ("Cart is Empty"): <div> You have {cartItems.length} items in the cart.  </div>}
+            {cartItems.length>0 && CartList}
+            
         </div>
     </section>
 }
- 
-export default CartStore;
+ const mapStateToProps=(state)=>{
+   return {
+     cartItems:state.pharmacy.cartItems
+   }
+ }
+export default connect(mapStateToProps)(CartStore);

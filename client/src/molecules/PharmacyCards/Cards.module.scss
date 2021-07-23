@@ -1,0 +1,9 @@
+.m-cards{
+    margin: 1rem 0;
+    width: 13rem;
+    font-weight: bold;
+    &__rating{
+        display: grid;
+        justify-items: center;
+    }
+}

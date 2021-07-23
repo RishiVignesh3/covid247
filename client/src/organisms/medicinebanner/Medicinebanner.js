@@ -1,17 +1,19 @@
 import SearchBar from "../../atoms/SearchBar/SearchBar";
 import style from "./medicinebanner.module.scss";
-import { dummy_medicine } from "../medicineStore/medicineStore";
+
  
-let options = [];
-dummy_medicine.map((medicine) => options.push({ value: medicine.name }));
+
  
-const Medicinebanner = () => {
+const Medicinebanner = (props) => {
+  let options = [];
+  props.medicines.map((medicine) => options.push({ value: medicine.Name }));
   return (
     <div className={style["o-medicinebanner"]}>
       <div >
         <h1><span>Covid care</span> in your own hands</h1>
         <SearchBar
           id="Medicine Search"
+          searchFn={props.searchFn} 
           options={options}
           placeholder="Search for Medicine"
         />
