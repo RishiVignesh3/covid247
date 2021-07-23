@@ -7,6 +7,82 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model Users {
+  id       Int    @default(autoincrement())
+  username String
+  email    String @id
+  password String
+
+}
+
+model Hospital {
+  id      Int       @id @default(autoincrement())
+  name    String?
+  seats   Int       @default(30)
+  rating  Int?
+  oxygen  Boolean
+  patient Patient[]
+}
+
+model Patient {
+  id         Int       @id @default(autoincrement())
+  name       String?
+  mobileNo   String?
+  age        Int?
+  bloodGroup String?
+  address    String?
+  hospitalID Int?
+  gender     String?
+  hospital   Hospital? @relation(fields: [hospitalID], references: [id])
+}
+
+model Cart {
+  id       String       @id
+  Name     String
+   price  String
+ // Medicine Medicine[]
+}
+
+model Medicine {
+  id     String    @id
+  Name   String
+  price  String
+  rating Float
+  // CartId Int?
+  // Cart   Cart?  @relation(fields: [CartId], references: [id])
+}
+
+model DoctorProfile {
+  id          String         @id 
+  name        String
+  description String
+  price       Float
+  rating      Int
+  appointment Appointment[]
+}
+
+model Patient1 {
+  id            Int          @id @default(autoincrement())
+  appointmentID String?      @unique
+  name          String?
+  mobileNo      String?
+  age           Int?
+  gender        String?
+  bloodGroup    String?
+  address       String?
+  appointment   Appointment? @relation(fields: [appointmentID], references: [id])
+}
+
+model Appointment {
+  id            String         @unique
+  doctorid      String?
+  date          String?
+  time          String?
+  doctorProfile DoctorProfile? @relation(fields: [doctorid], references: [id])
+  patient       Patient1?
+}
+
+
 // model Cart {
 //   id           Int     @id @default(autoincrement())
 //   saveForLater Boolean @default(false)

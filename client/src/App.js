@@ -11,10 +11,14 @@ import DoctorConsult from "./pages/DoctorConsult/DoctorConsult";
 import Pharmacypage from "./pages/pharmacypage/pharmacypage";
 import CartPage from "./pages/CartPage/CartPage";
 import Paymentpage from "./pages/PaymentPage/PaymentPage";
+import PaymentConsultpage from "./pages/PaymentConsultPage/PaymentPage";
+
 
 function App() {
   return (
+    
     <div className="App">
+    
       <DashBoardHeader />
       <Switch className="App__content">
         <Route path="/Signup" exact>
@@ -38,6 +42,9 @@ function App() {
         <Route path="/payment" exact>
           <Paymentpage />
         </Route>
+        <Route path="/paymentconsult" exact>
+          <PaymentConsultpage />
+        </Route>
         <Route path="/consult" exact>
           <DoctorConsult />
         </Route>
@@ -46,7 +53,9 @@ function App() {
         </Route>
       </Switch>
       <Footer />
+     
     </div>
+
   );
 }
 

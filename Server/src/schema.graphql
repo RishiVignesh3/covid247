@@ -1,1 +1,120 @@
-scalar Date
+type Query {
+  loginCheck(email: String!, password: String!): String!
+  login: Users!
+  hospital(id: ID): [Hospital!]!
+  patients(id: ID): [Patient!]
+  Medicine(id: String): [Medicine!]!
+  doctorProfile(id: String): [DoctorProfile]!
+  carts(id: String):[Cart!]!
+}
+
+type Mutation {
+  addUser(username: String!, email: String!, password: String!): Users!
+  changePassword(email: String!, password: String!): String!
+  createHospitals: String!
+  updateHospital(
+    id: String!
+    name: String!
+    mobileNo: String!
+    age: Int!
+    gender: String!
+    bloodGroup: String!
+    address: String!
+  ): Hospital!
+  deleteCartItem(id: String!):Cart!
+  Checkout(id:String!,Name: String! , price: String!):ID!
+   addAppointment(id: String!, doctorid: String!, date: String!, time: String!): Appointment!
+
+  addPatientInfo(
+    appointmentID: String!
+    name: String!
+    mobileNo: String!
+    age: Int!
+    gender: String!
+    bloodGroup: String!
+    address: String!
+  ): Patient1!
+}
+
+type Users {
+  username: String!
+  email: String!
+  password: String!
+}
+
+type Hospital {
+  id: String!
+  name: String!
+  seats: Int!
+  rating: Int!
+  oxygen: Boolean!
+  patients: [Patient]
+}
+
+type Patient {
+  id: ID!
+  hospitalID: String!
+  hospital: Hospital!
+  name: String!
+  mobileNo: String!
+  age: Int!
+  gender: String!
+  bloodGroup: String!
+  address: String!
+}
+
+
+type Cart{
+  id: String!
+   Name: String!
+  price: String!
+ 
+  
+}
+
+type Medicine{
+  id: String!
+  Name: String!
+  price: String!
+  rating: Float!
+  
+}
+
+
+type DoctorProfile {
+  id: String!
+  name: String!
+  description: String!
+  price: Float!
+  rating: Int!
+  appointment: Appointment
+}
+type Patient1 {
+  id: ID!
+  appointmentID: String!
+  appointment: Appointment!
+  name: String!
+  mobileNo: String!
+  age: Int!
+  gender: String!
+  bloodGroup: String!
+  address: String!
+}
+type Appointment {
+  id: String!
+  patient: Patient1
+  doctorProfile: DoctorProfile!
+  doctorid: String!
+  date: String!
+  time: String!
+}
+
+# type Query {
+#   coupounById(id: ID!): CoupounCode!
+#   validate(title: String!): Boolean!
+#   user(id: ID!): User!
+#   cart(userId: Int!): [Cart!]
+#   carts: [Cart!]!
+#   users: [User!]!
+#   postBygenre(id: Int!): [Post!]
+# }

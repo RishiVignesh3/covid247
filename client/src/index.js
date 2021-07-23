@@ -4,10 +4,18 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from "react-router-dom"
+import client from "./server/server";
+import { ApolloProvider } from "@apollo/client";
+import store from "./redux/store/store"
+import {Provider} from "react-redux"
 
 ReactDOM.render(
   <BrowserRouter>
+  <ApolloProvider client={client}>
+  <Provider store={store}>
     <App />
+    </Provider>
+    </ApolloProvider>
   </BrowserRouter>,
   document.getElementById('root')
 );

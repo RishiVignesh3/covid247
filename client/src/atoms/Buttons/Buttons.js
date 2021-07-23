@@ -1,7 +1,11 @@
 import React from "react";
 import style from "./Buttons.module.scss";
 import { Button } from "antd";
-import { SearchOutlined,EditFilled,ShoppingCartOutlined } from '@ant-design/icons';
+import {
+  SearchOutlined,
+  EditFilled,
+  ShoppingCartOutlined,
+} from "@ant-design/icons";
 
 const Buttons = (props) => {
   const {
@@ -11,50 +15,58 @@ const Buttons = (props) => {
     Size,
     onClick,
     id,
-   
+
     width,
     height,
-    borderradius
-    
+    borderradius,
   } = props;
 
-  let bgColor = '', color = '', icon = ''
+  let bgColor = "",
+    color = "",
+    icon = "",
+    font="";
   switch (props.btnType) {
     case "dark":
-      bgColor = "black"
-      color = "white"
+      bgColor = "black";
+      color = "white";
       break;
 
     case "danger":
-      bgColor = "#d61122"
-      color = "black"
+      bgColor = "#d61122";
+      color = "black";
       break;
 
     case "success":
-      bgColor = "green"
-      color = "white"
+      bgColor = "green";
+      color = "white";
       break;
 
-      case "primary":
-        bgColor = "#1890ff"
-        color = "white"
-        break;
+    case "primary":
+      bgColor = "#1890ff";
+      color = "white";
+      break;
+
       
+    case "yellow":
+      bgColor = "white";
+      color = "brown";
+      font = "Times New Roman";
+      break;
+
     default:
       break;
   }
   switch (props.icon) {
-
     case "cart":
-      icon=<ShoppingCartOutlined/>
+      icon = <ShoppingCartOutlined />;
       break;
 
     case "search":
-      icon = <SearchOutlined />
+      icon = <SearchOutlined />;
       break;
 
     case "edit":
-      icon = <EditFilled />
+      icon = <EditFilled />;
       break;
 
     default:
@@ -68,17 +80,21 @@ const Buttons = (props) => {
         data-test={name}
         id={id}
         icon={icon}
-
+        type={props.type}
         style={{
-          border: Border ,
+          border: Border,
           width: width,
           height: height,
-          color: color ? color : '',
-          backgroundColor: bgColor ? bgColor : '',
+          color: color,
+          backgroundColor: bgColor,
           borderRadius: borderradius,
           fontWeight: Weight,
-          fontSize: Size 
-        }}>
+          fontSize: Size,
+          fontFamily:font,
+          boxShadow: "2px 7px 5px rgba(0,0,0,0.3)"
+
+        }}
+      >
         {name}
       </Button>
     </div>
