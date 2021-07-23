@@ -9,7 +9,6 @@ function SearchBar(props) {
   const searchHandler=()=>{
     const searchedItem= document.getElementById(id).value
     searchFn(searchedItem)
-    // console.log(searchedItem)
   }
   return (
     <div className={style['a-searchBar']}>

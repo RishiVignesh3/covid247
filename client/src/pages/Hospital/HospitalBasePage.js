@@ -1,53 +1,60 @@
 import React, { useState } from "react";
-import searchStyle from "../../organisms/HospitalList/HospitalList.module.scss";
 import HospitalBanner from "../../organisms/HospitalBannerSection/HospitalBanner";
 import HospitalList from "../../organisms/HospitalList/HospitalList";
-import db from "../../localDB/db";
-import Cards from "../../molecules/Cards/Cards";
-import {useHistory} from "react-router-dom"
+import Loading from '../../loading_gif.gif'
+import { connect } from "react-redux";
+import { useQuery, gql } from "@apollo/client";
 
-
-function Hospital() {
-  const history = useHistory()
-
-  let searchedData;
-  const [hospitals, setHospitals] = useState([]);
-
-  const SearchedItem = (item) => {
-
-    const CardClickHandler=()=>{
-      history.push("/hospital/booking")
+const getHospitalsData = gql`
+  query Hospitals {
+    hospital {
+      id
+      name
+      seats
+      oxygen
+      rating
+    }
   }
-    searchedData = item;
-    if (searchedData) {
-      const RegMatch = new RegExp(searchedData, "gi");
-      const searchResult = db.hospitalData.filter((hospital) =>
+`;
+
+const Hospital = (props) => {
+  const [searched, setSearched] = useState(false);
+  const [searchedResult,setSearchedResult]=useState([])
+
+  const { loading, error, data } = useQuery(getHospitalsData); //Get data from Backend
+  if (loading) return <div style={{display:'flex'}}><img style={{margin:'5rem auto'}} src={Loading} alt="Loading Gif"/></div>;
+  if (error) return <p>Error: {error.message}</p>;
+
+  let hospitalArray=data.hospital
+  //Update after booking seats
+  if(props.updatedHospital!==''){
+    const index=hospitalArray.findIndex(hospital=>hospital.id===props.updatedHospital.id)
+    hospitalArray[index].seats=props.updatedHospital.seats
+  }
+  
+  const SearchedItem = (item) => {
+    if (item) {
+      setSearched(true); //state updatation
+      const RegMatch = new RegExp(item, "gi");
+      const searchResult = hospitalArray.filter((hospital) =>
         hospital.name.match(RegMatch)
       );
-      const searchedHospitals = searchResult.map((hospital) => (
-        <Cards
-          id={`hospital${hospital.id}`}
-          className="hospitals"
-          name={hospital.name}
-          value={hospital.rating}
-          key={hospital.id}
-          onClick={CardClickHandler}
-        />
-      ));
-      setHospitals(searchedHospitals);
+      setSearchedResult(searchResult)
     }
   };
 
   return (
-    <div style={{width:"75rem", margin:"0 auto"}}>
-      <HospitalBanner searchFn={SearchedItem} />
-      {hospitals.length !== 0 ? (
-        <div className={searchStyle["hospitalsDiv"]}>{hospitals}</div>
-      ) : (
-        <HospitalList />
-      )}
+    <div style={{ width: "75rem", margin: "0 auto" }}>
+      <HospitalBanner hospitals={hospitalArray} searchFn={SearchedItem} />
+      <HospitalList hospitals={searched ?searchedResult:hospitalArray} />
     </div>
   );
+};
+
+const mapStateToProps=state=>{
+  return{
+    updatedHospital:state.hospital.updatedHospital
+  }
 }
 
-export default Hospital;
+export default connect(mapStateToProps)(Hospital);
